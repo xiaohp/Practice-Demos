@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>demo</title>
+        <script src="js/template.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="content">
+            
+        </div>
+        <script id="keywordsList" type="text/html">
+        	<div class="list">
+        		<ul>
+        			{{each msg as result i}}
+        				<li data-id='{{result.list_id}}'>{{result.list_name}}</li>
+        			{{/each}}
+        		</ul>
+        	</div>
+        	<div class="keywords">
+        		{{each msg as result i}}
+        			<ul id="id-ul-{{result.list_id}}">
+        				{{each result.keywords as res i}}
+        					<li>{{res.text}}</li>
+        				{{/each}}
+        			</ul>
+        		{{/each}}
+        	</div>
+        
+        </script>
+        
+        <script id="key" type="text/html">
+            <div class="list">
+                <ul>
+                    {{each msg as result i}}
+                        <li data-id='{{result.list_id}}'>{{result.list_name}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="keywords">
+        		{{each msg as result i}}
+        			<ul id="id-ul-{{result.list_id}}">
+        				{{each result.keywords as res i}}
+        					<li>{{res.text}}</li>
+        				{{/each}}
+        			</ul>
+        		{{/each}}
+        	</div>
+        </script>
+        
+        
+        <script type="text/javascript">
+        var data = {
+            title: '标签',
+            msg: [
+                {
+                    list_id: "1",
+                    list_name: "折扣",
+                    keywords: [
+                        {
+                            id: "01",
+                            text: "活动价",
+                        },
+                        {
+                            id: "02",
+                            text: "惊喜价",
+                        },
+                        {
+                            id: "03",
+                            text: "心动价",
+                        },
+                        {
+                            id: "04",
+                            text: "活动价",
+                        },
+                        {
+                            id: "05",
+                            text: "第二件半价",
+                        }
+                    ]
+                },
+                {
+                    list_id: "2",
+                    list_name: "活动",
+                    keywords: [
+                        {
+                            id: "11",
+                            text: "注册周年庆",
+                        },
+                        {
+                            id: "12",
+                            text: "周年店庆",
+                        },
+                        {
+                            id: "13",
+                            text: "活动中",
+                        },
+                        {
+                            id: "14",
+                            text: "掌柜推荐",
+                        },
+                        {
+                            id: "15",
+                            text: "感恩回馈",
+                        }
+                    ]
+                }
+            ]
+        }
+
+        var html = template('keywordsList', data);
+        document.getElementById('content').innerHTML = html;
+        </script>
+    </body>
+</html>

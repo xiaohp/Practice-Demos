@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>select2 demo</title>
+        <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="select2.min.css">
+        <script src="select2.min.js" charset="utf-8"></script>
+        <script src="zh-CN.js" charset="utf-8"></script>
+        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <label for="id_label_single">
+            选择活动名称
+            <select class="js-example-basic-single js-states form-control" name="" id="id_label_single">
+                    <option value="1">限时打折</option>
+                    <option value="2">春季上新</option>
+                    <option value="3">五一特惠</option>
+                    <option value="4">手机尊享价</option>
+            </select>
+        </label>
+        
+        <label for="id_label_single2">
+            这里是从数组加载的列表
+            <select class="basic-single js-states form-control" name="" id="id_label_single2">
+                
+            </select>
+        </label>
+        <label >
+            这里是一个普通的选择
+            <select id="normal-select">
+                <option value="1">限时打折</option>
+                <option value="2">春季上新</option>
+                <option value="3">五一特惠</option>
+                <option value="4">手机尊享价</option>
+            </select>
+        </label>
+        
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                window.log = console.log.bind(console, '*** xiao')
+                
+                $('.js-example-basic-single').select2({
+                    placeholder: "选择名称",
+                    allowClear: true
+                    
+                })
+                
+                var data = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
+                var data2 = [{ id: '活动名称', text: '活动名称' }, { id: 'bug', text: 'bug' }, { id: 'duplicate', text: 'duplicate' }, { id: 'invalid', text: 'invalid' }, { id: 'wontfix', text: 'wontfix' }];
+
+                $('.basic-single').select2({
+                    'data': data2,
+                })
+
+                
+            })
+            
+          
+        </script>
+    </body>
+</html>

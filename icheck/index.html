@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>icheck</title>
+        <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+        <script src="https://cdn.bootcss.com/iCheck/1.0.2/icheck.js"></script>
+        <style media="screen">
+            .hide {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <label>
+          <div class="icheckbox">
+            <input type="checkbox" name="quux[1]">
+          </div>
+          Foo
+        </label>
+
+        <label for="baz[1]">Bar</label>
+        <div class="iradio checked">
+          <input type="radio" name="quux[2]" id="baz[1]" checked>
+        </div>
+
+        <label for="baz[2]">Bar</label>
+        <div class="iradio">
+          <input type="radio" name="quux[2]" id="baz[2]">
+        </div>
+        
+        <div class="container">
+            <input type="checkbox" data-id="1" class="menu" checked>
+            <input type="checkbox" data-id="2" class="menu">
+            <input type="checkbox" data-id="3" class="menu">
+            <input type="checkbox" data-id="4" class="menu">
+            <input type="checkbox" data-id="5" class="menu hide" checked>
+        </div>
+        
+    </body>
+    
+    <script type="text/javascript">
+        $('input[checked]').each(function(){
+            console.log(this)
+        })
+    </script>
+</html>

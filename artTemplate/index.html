@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>demo</title>
+        <script src="js/template.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="content">
+            
+        </div>
+        <script id="test" type="text/html">
+            <h1>{{title}}</h1>
+            <ul>
+                {{each list as value i}}
+                    <li>索引 {{i + 1}} ：{{value}}</li>
+                {{/each}}
+            </ul>
+        </script>
+        
+        
+        
+        <script type="text/javascript">
+        var data = {
+            title: '标签',
+            list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+        };
+        var html = template('test', data);
+        document.getElementById('content').innerHTML = html;
+        
+        
+        // 后端会对原模板符号进行渲染，需要重新设置模板引擎符号
+    	// template.config('openTag', '{#')
+    	// template.config('closeTag', '#}')
+        
+        </script>
+    </body>
+</html>
