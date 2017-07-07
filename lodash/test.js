@@ -21,3 +21,19 @@ var test_compact = function() {
 }
 
 test_compact()
+
+var test_difference = function() {
+    var a = [1, 2]
+    var b = [2, 3]
+    ensure(difference(a, b), [1], 'difference 测试 1 出错')
+}
+
+test_difference()
+
+var test_drop = function() {
+    ensure(drop([1, 2, 3]), [2, 3], 'drop 测试 1 出错')
+    ensure(drop([1, 2, 3], 2), [3], 'drop 测试 2 出错')
+    ensure(drop([1, 2, 3], 5), [], 'drop 测试 3 出错')
+}
+
+test_drop()
