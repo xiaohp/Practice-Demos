@@ -37,3 +37,15 @@ var test_drop = function() {
 }
 
 test_drop()
+
+var test_flatten = function() {
+    ensure(flatten([1, [2, [3, [4]], 5]]), [1, 2, [3, [4]], 5], 'flatten 测试 1 出错')
+}
+
+test_flatten()
+
+var test_flatten_deep = function() {
+    ensure(flatten_deep([1, [2, [3, [4]], 5]]), [1, 2, 3, 4, 5], 'flatten_deep 测试 1 出错')
+}
+
+test_flatten_deep()
