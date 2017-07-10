@@ -103,3 +103,18 @@ var test_nth = function() {
     ensure(nth(array, -2), 'c', 'nth test 2 error')
 }
 test_nth()
+
+var test_pullAll = function() {
+    var array = ['a', 'b', 'c', 'a', 'b', 'c']
+    var remove = ['a', 'c']
+    ensure(pullAll(array, remove), ['b', 'b'], 'pull test 1 error')
+}
+
+test_pullAll()
+
+var test_pullAt = function() {
+    var array = ['a', 'b', 'c', 'd']
+    ensure(pullAt(array, [1, 3]), ['b', 'd'], 'pullAt test 1 error')
+    // console.log('处理后', array)
+}
+test_pullAt()

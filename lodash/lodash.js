@@ -134,3 +134,32 @@ const nth = function(array, n=0) {
         return array[n + array.length]
     }
 }
+// 删除与给定数组相同元素的所有值
+const pullAll = function(array, remove_array) {
+    const _remove = function(array, e) {
+        let length = array.length
+        for (var i = 0; i < length; i++) {
+            let index = array.indexOf(e)
+            if (index > -1) {
+                array.splice(index, 1)
+            } else {
+                break
+            }
+        }
+    }
+    for (var i = 0; i < remove_array.length; i++) {
+        let l = remove_array[i]
+        _remove(array, l)
+    }
+    return array
+}
+// 删除指定位置元素，返回删除元素组成的数组，会修改原数组
+const pullAt = function(array, indexes) {
+    var res = []
+    for (var i = indexes.length - 1; i > -1; i--) {
+        var index = indexes[i]
+        var r = array.splice(index, 1)
+        res.unshift(r[0])
+    }
+    return res
+}
