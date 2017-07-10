@@ -163,3 +163,79 @@ const pullAt = function(array, indexes) {
     }
     return res
 }
+// 翻转数组
+const reverse = function(array) {
+    let res = []
+    for (var i = array.length - 1; i > -1 ; i--) {
+        let a = array[i]
+        res.push(a)
+    }
+    return res
+}
+// 返回除了第一个元素的数组
+const tail = function(array) {
+    let res = []
+    for (var i = 1; i < array.length; i++) {
+        res.push(array[i])
+    }
+    return res
+}
+// 返回数组的切片
+const take = function(array, n=1) {
+    let res = []
+    let l 
+    if (array.length > n) {
+        l = n
+    } else {
+        l = array.length
+    }
+    for (var i = 0; i < l; i++) {
+        res.push(array[i])
+    }
+    return res
+}
+// 返回数组并集
+const union = function(a, b) {
+    const _unique = function(array) {
+        return Array.from(new Set(array))
+    }
+    let res = []
+    for (let i = 0; i < a.length; i++) {
+        res.push(a[i])
+    }
+    for (let i = 0; i < b.length; i++) {
+        res.push(b[i])
+    }
+    return _unique(res)
+}
+// 数组去重
+const uniq = function(array) {
+    return Array.from(new Set(array))
+}
+// 重组数组
+const unzip = function(a, b) {
+    let res = []
+    for (var i = 0; i < a.length; i++) {
+        let temp = [a[i], b[i]]
+        res.push(temp)
+    }
+    return res
+}
+// 对数组进去异或运算
+const xor = function(array2, array1) {
+    let a = uniq(array1)
+    let b = uniq(array2)
+    if (a.length > b.length) {
+        let l = b.length
+    } else {
+        let l = a.length
+    }
+    for (var i = 0; i < a.length; i++) {
+        if (b.includes(a[i])) {
+            b = pullAll(b, [a[i]])
+        } else {
+            b.push(a[i])
+        }
+    }
+    return b
+}

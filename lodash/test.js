@@ -117,4 +117,51 @@ var test_pullAt = function() {
     ensure(pullAt(array, [1, 3]), ['b', 'd'], 'pullAt test 1 error')
     // console.log('处理后', array)
 }
+
 test_pullAt()
+
+var test_reverse = function() {
+    var array = [1, 2, 3]
+    ensure(reverse(array), [3, 2, 1], 'reverse test 1 error')
+}
+
+test_reverse()
+
+var test_tail = function() {
+    ensure(tail([1, 2, 3]), [2, 3], 'tail test 1 error')
+}
+
+test_tail()
+
+var test_take = function() {
+    ensure(take([1, 2, 3]), [1], 'take test 1 error')
+    ensure(take([1, 2, 3], 2), [1, 2], 'take test 2 error')
+    ensure(take([1, 2, 3], 5), [1, 2, 3], 'take test 3 error')
+    ensure(take([1, 2, 3], 0), [], 'take test 4 error')
+}
+
+test_take()
+
+var test_union = function() {
+    ensure(union([2], [1, 2]), [2, 1], 'union test 1 error')
+}
+
+test_union()
+
+var test_uniq = function() {
+    ensure(uniq([2, 1, 2]), [2, 1], 'uniq test 1 error')
+}
+
+test_uniq()
+
+var test_unzip = function() {
+    var a = ['a', 1, true]
+    var b = ['b', 2, false]
+    ensure(unzip(a, b), [['a', 'b'], [1, 2], [true, false]], 'unzip test 1 error')
+}
+test_unzip()
+
+var test_xor = function() {
+    ensure(xor([2, 1], [2, 3]), [1, 3], 'xor test 1 error')
+}
+test_xor()
