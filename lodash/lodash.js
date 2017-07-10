@@ -183,7 +183,7 @@ const tail = function(array) {
 // 返回数组的切片
 const take = function(array, n=1) {
     let res = []
-    let l 
+    let l
     if (array.length > n) {
         l = n
     } else {
@@ -238,4 +238,21 @@ const xor = function(array2, array1) {
         }
     }
     return b
+}
+// 数组重组
+const zip = function(a, b, c) {
+    let res = []
+    for (var i = 0; i < a.length; i++) {
+        let r = [a[i], b[i], c[i]]
+        res.push(r)
+    }
+    return res
+}
+// 数组重组为对象
+const zipObject = function(a, b) {
+    let res = {}
+    for (var i = 0; i < a.length; i++) {
+        res[a[i]] = b[i]
+    }
+    return res
 }

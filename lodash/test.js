@@ -165,3 +165,24 @@ var test_xor = function() {
     ensure(xor([2, 1], [2, 3]), [1, 3], 'xor test 1 error')
 }
 test_xor()
+
+var test_zip = function() {
+    var a = ['a', 'b']
+    var b = [1, 2]
+    var c = [true, false]
+    ensure(zip(a, b, c), [['a', 1, true], ['b', 2, false]], 'zip test 1 error')
+}
+
+test_zip()
+
+var test_zipObject = function() {
+    var a = ['a', 'b']
+    var b = [1, 2]
+    var obj = {
+        a: 1,
+        b: 2,
+    }
+    ensure(zipObject(a, b), obj, 'zipObject test 1 error')
+}
+
+test_zipObject()
