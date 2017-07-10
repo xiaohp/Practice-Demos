@@ -10,10 +10,10 @@
         <button class="btn" data-clipboard-text="Just because you can doesn't mean you should — clipboard.js">
             Copy to clipboard
         </button>
-
+        
         <script type="text/javascript">
             var clipboard = new Clipboard('.btn');
-
+            // 注意，如果 data 里面的值是通过 jQuery 动态添加，需要通过 attr 属性设置，不能通过自定义 data 设置
             clipboard.on('success', function(e) {
                 console.info('Action:', e.action);
                 console.info('Text:', e.text);
