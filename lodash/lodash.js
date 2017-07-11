@@ -1,3 +1,4 @@
+// Array
 // 切分数组
 const chunk = function(array, size=1) {
     let length = array.length
@@ -255,4 +256,50 @@ const zipObject = function(a, b) {
         res[a[i]] = b[i]
     }
     return res
+}
+// Collection
+// 返回根据函数运算后数组中，各个元素的数量
+const countBy = function(array, iteratee) {
+    const _countArray = function(array, value) {
+        let count = 0
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] === value) {
+                count++
+            }
+        }
+        return count
+    }
+    let resArray = []
+    let res = {}
+    for (var i = 0; i < array.length; i++) {
+        let a = array[i]
+        resArray.push(iteratee(a))
+    }
+    let uniqArray = uniq(resArray)
+    for (var i = 0; i < uniqArray.length; i++) {
+        let a = uniqArray[i]
+        let count = _countArray(resArray, a)
+        res[a] = count
+    }
+    return res
+}
+// 返回根据函数运算结果，全部返回 true, 则返回 true, 否则返回 false
+const every = function(array, predicate) {
+    return array.every(predicate)
+}
+// 返回符合结果的数组
+const filter = function(array, predicate) {
+    return array.filter(predicate)
+}
+// 返回符合结果的第一个元素
+const find = function(array, predicate) {
+    return array.find(predicate)
+}
+// 遍历数组
+const forEach = function(array, iteratee) {
+    array.find(iteratee)
+}
+// 数组是否包含元素
+const includes = function(array, value) {
+    return array.indexOf(value) > -1
 }

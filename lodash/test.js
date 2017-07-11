@@ -186,3 +186,54 @@ var test_zipObject = function() {
 }
 
 test_zipObject()
+
+var test_conuntBy = function() {
+    var a = [6.1, 4.2, 6.3]
+    var b = {
+        4: 1,
+        6: 2,
+    }
+    ensure(countBy(a, Math.floor), b, 'countBy test 1 error')
+}
+
+test_conuntBy()
+
+var test_every = function() {
+    ensure(every([true, 1, null, 'yes'], Boolean), false, 'every test 1 error')
+}
+
+test_every()
+
+var test_filter = function() {
+    var isBigEnough = function(element) {
+        return element >= 15
+    }
+    ensure(filter([12, 5, 8, 130, 44], isBigEnough), [130, 44], 'filter test 1 error')
+}
+
+test_filter()
+
+var test_find = function() {
+    var isBigEnough = function(element) {
+        return element >= 15
+    }
+    ensure(find([12, 5, 8, 130, 44], isBigEnough), 130, 'find test 1 error')
+}
+
+test_find()
+
+var test_forEach = function() {
+    var log = function(element) {
+        // console.log(element)
+    }
+    forEach([12, 5], log)
+}
+
+test_forEach()
+
+var test_includes = function() {
+    ensure(includes([12, 5, 8, 130, 44], 5), true, 'includes test 1 error')
+    ensure(includes([12, 5, 8, 130, 44], 66), false, 'includes test 2 error')
+}
+
+test_includes()
