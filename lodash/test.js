@@ -237,3 +237,26 @@ var test_includes = function() {
 }
 
 test_includes()
+
+var test_map = function() {
+    function square(n) {
+        return n * n
+    }
+    ensure(map([4, 8], square), [16, 64], 'map test 1 error')
+}
+
+test_map()
+
+var test_reduce = function() {
+    ensure(reduce([1, 2], function(sum, n) {
+        return sum + n
+    }, 0), 3, 'reduce test 1 error')
+}
+test_reduce()
+
+var test_sample = function() {
+    var array = [1, 2, 3, 4]
+    // console.log(sample(array))
+}
+
+test_sample()

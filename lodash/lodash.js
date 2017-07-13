@@ -297,9 +297,26 @@ const find = function(array, predicate) {
 }
 // 遍历数组
 const forEach = function(array, iteratee) {
-    array.find(iteratee)
+    array.forEach(iteratee)
 }
 // 数组是否包含元素
 const includes = function(array, value) {
     return array.indexOf(value) > -1
+}
+// 遍历数组返回新数组
+const map = function(array, iteratee) {
+    return array.map(iteratee)
+}
+// 返回对数组累加运算的结果
+const reduce = function(array, iteratee, accumulator) {
+    return array.reduce(iteratee, accumulator)
+}
+// 返回数组中的一个随机元素
+const sample = function(array) {
+    const _random = function(n) {
+        let r = Math.random() * n
+        return Math.floor(r)
+    }
+    let n = _random(array.length)
+    return array[n]
 }
