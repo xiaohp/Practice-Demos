@@ -29,3 +29,8 @@ const test_merge_sort = function() {
     ensure(merge_sort(a), res, 'merge_sort test 1 error')
 }
 test_merge_sort()
+
+const test_quick_sort = function() {
+    ensure(quick_sort(a), res, 'quick_sort test 1 error')
+}
+test_quick_sort()

@@ -77,3 +77,46 @@ const merge_sort = function(array) {
     let right = array.slice(middle)
     return merge(merge_sort(left), merge_sort(right))
 }
+// 快速排序
+// 快速排序工具函数，完成一轮排序
+const partition = function(array, left, right) {
+    let pivot = array[Math.floor((right + left) / 2)]
+    let i = left
+    let j = right
+    while (i <= j) {
+        while (array[i] < pivot) {
+            i++
+        }
+        
+        while (array[j] > pivot) {
+            j--
+        }
+        
+        if (i <= j) {
+            swap(array, i, j)
+            i++
+            j--
+        }
+    }
+    return i
+}
+
+const quick_sort = function(array, left, right) {
+    if (array.length < 2) {
+        return array
+    }
+    if (typeof left !== 'number') {
+        left = 0
+    } 
+    if (typeof right !== 'number') {
+        right = array.length - 1
+    }
+    let index = partition(array, left, right)
+    if (left < index - 1) {
+        quick_sort(array, left, index - 1)
+    }
+    if (index < right) {
+        quick_sort(array, index, right)
+    }
+    return array
+}
