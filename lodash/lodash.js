@@ -320,3 +320,65 @@ const sample = function(array) {
     let n = _random(array.length)
     return array[n]
 }
+// Math
+// add
+const add = function(a, b) {
+    return a + b
+}
+// divide
+const divide = function(a, b) {
+    return a / b
+}
+// max
+const max = function(array) {
+    if (array.length === 0) {
+        return undefined
+    }
+    let m = array[0]
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > m) {
+            m = array[i]
+        }
+    }
+    return m
+}
+// mean
+const mean = function(array) {
+    if (array.length === 0) {
+        return undefined
+    }
+
+    const sum = function(array) {
+        let res = 0
+        for (let i = 0; i < array.length; i++) {
+            res += array[i]
+        }
+        return res
+    }
+
+    let s = sum(array)
+    return s / array.length
+}
+// min
+const min = function(array) {
+    if (array.length === 0) {
+        return undefined
+    }
+    let m = array[0]
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] < m) {
+            m = array[i]
+        }
+    }
+    return m
+}
+// String
+// camelCase
+const camelCase = function(string) {
+    let s = string.toLocaleLowerCase()
+    let list = s.split('_')
+    for (let i = 1; i < list.length; i++) {
+        list[i] = list[i][0].toUpperCase() + list[i].slice(1)
+    }
+    return list.join('')
+}

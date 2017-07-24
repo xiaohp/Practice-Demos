@@ -260,3 +260,45 @@ var test_sample = function() {
 }
 
 test_sample()
+
+var test_add = function() {
+    ensure(add(4, 5), 9, 'add test 1 error')
+    ensure(add(0, -6), -6, 'add test 2 error')
+}
+
+test_add()
+
+var test_divide = function() {
+    ensure(divide(6, 4), 1.5, 'divide test 1 error')
+    ensure(divide(5, -5), -1, 'divide test 2 error')
+}
+
+test_divide()
+
+var test_max = function() {
+    ensure(max([4, 2, 8, 6]), 8, 'max test 1 error')
+    ensure(max([]), undefined, 'max test 2 error')
+}
+
+test_max()
+
+var test_mean = function() {
+    ensure(mean([4, 2, 8, 6]), 5, 'mean test 1 error')
+    ensure(mean([]), undefined, 'mean test 2 error')
+}
+
+test_mean()
+
+var test_min = function() {
+    ensure(min([4, 2, 8, 6]), 2, 'min test 1 error')
+    ensure(min([]), undefined, 'min test 2 error')
+}
+
+test_min()
+
+var test_camelCase = function() {
+    ensure(camelCase('hello_world'), 'helloWorld', 'camelCase test 1 error')
+    ensure(camelCase('set_item_value'), 'setItemValue', 'camelCase test 2 error')
+}
+
+test_camelCase()
