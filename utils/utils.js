@@ -78,7 +78,7 @@ var setText = function(element, text) {
 }
 
 var setHtml = function(element, html) {
-    element.innerHtml = html
+    element.innerHTML = html
 }
 
 var setValue = function(element, value) {
