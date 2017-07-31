@@ -6,8 +6,16 @@ var es = function(sel) {
     return document.querySelectorAll(sel)
 }
 
+// 在元素中查找
 var find = function(element, selector) {
     return element.querySelector(selector)
+}
+
+// 获取子元素在父元素中的 index
+var indexOf = function(element, childElement) {
+    var nodes = element.children
+    var i = Array.prototype.indexOf.call(nodes, childElement)
+    return i
 }
 
 var log = console.log.bind(console)
@@ -47,7 +55,7 @@ var toggleClass = function(element, className) {
         element.classList.add(className)
     }
 }
-
+// 找到所有拥有该 class 的元素，并删除该 class
 var removeClassAll = function(className) {
     var selector = '.' + className
     var elements = document.querySelectorAll(selector)
@@ -56,7 +64,7 @@ var removeClassAll = function(className) {
         e.classList.remove(className)
     }
 }
-
+// 删除元素
 var removeAll = function(selector) {
     var tags = document.querySelectorAll(selector)
     for (var i = 0; i < tags.length; i++) {
