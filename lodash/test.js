@@ -296,6 +296,13 @@ var test_min = function() {
 
 test_min()
 
+var test_sum = function() {
+    ensure(sum([4, 2, 8, 6]), 20, 'sum test 1 error')
+    ensure(sum([]), 0, 'sum test 2 error')
+}
+
+test_sum()
+
 var test_camelCase = function() {
     ensure(camelCase('hello_world'), 'helloWorld', 'camelCase test 1 error')
     ensure(camelCase('set_item_value'), 'setItemValue', 'camelCase test 2 error')

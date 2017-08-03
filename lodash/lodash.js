@@ -372,6 +372,23 @@ const min = function(array) {
     }
     return m
 }
+// sum
+const sum = function(array) {
+    let res = 0
+    for (let i = 0; i < array.length; i++) {
+        res += array[i]
+    }
+    return res
+}
+
+// const sum = function(...values) {
+//     let res = 0
+//     for (var val of values) {
+//       res += val
+//     }
+//     return res
+// }
+
 // String
 // camelCase
 const camelCase = function(string) {
