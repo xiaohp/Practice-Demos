@@ -330,17 +330,24 @@ const divide = function(a, b) {
     return a / b
 }
 // max
+// const max = function(array) {
+//     if (array.length === 0) {
+//         return undefined
+//     }
+//     let m = array[0]
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] > m) {
+//             m = array[i]
+//         }
+//     }
+//     return m
+// }
+// ES 6
 const max = function(array) {
     if (array.length === 0) {
         return undefined
     }
-    let m = array[0]
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] > m) {
-            m = array[i]
-        }
-    }
-    return m
+    return Math.max(...array)
 }
 // mean
 const mean = function(array) {
