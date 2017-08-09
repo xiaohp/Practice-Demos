@@ -89,6 +89,10 @@ const from_pairs = function(pairs) {
 const head = function(array) {
     return array[0]
 }
+// const head = function(array) {
+//     const [first, ...rest] = array
+//     return first
+// }
 // 返回元素在数组中第一次出现的位置，可以设置从指定位置开始查找
 const indexOf = function(array, value, from_index=0) {
     for (let i = from_index; i < array.length; i++) {
