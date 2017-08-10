@@ -35,7 +35,7 @@ var __main = function() {
     copyContent()
     // 首次初始化
     determineDropDirection()
-    // 绑定鼠标进入时初始化，列表内容变动时需要更新
+    // // 绑定鼠标进入时初始化，列表内容变动时需要更新
     $('body').on('mouseenter', '.dropdown', function(e) {
         determineDropDirection()
     })
