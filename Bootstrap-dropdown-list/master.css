@@ -1,0 +1,7 @@
+table tr {
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+table td {
+    width: 100px;
+}
