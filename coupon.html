@@ -4,15 +4,19 @@
         <meta charset="utf-8">
         <title>corner demo</title>
         <style media="screen">
-
         .main {
+            display: inline-block;
+            padding: 10px;
+            background: linear-gradient(to bottom, white, pink);
+        }
+        .coupon {
             position: relative;
             width: 200px;
             height: 40px;
-            margin: 0 5px;
+            margin: 5px;
             background-color: #e9ac30;
         }
-        .main::before {
+        .coupon::before {
             position: absolute;
             content: "";
             display: block;
@@ -24,7 +28,7 @@
             border-radius: 2px 0 0 2px;
             background: radial-gradient(10px at left,transparent 50%, #e9ac30 50%);
         }
-        .main::after {
+        .coupon::after {
             position: absolute;
             content: "";
             display: block;
@@ -40,7 +44,12 @@
     </head>
     <body>
         <div class="main">
-
+            <div class="coupon"></div>
+            <div class="coupon"></div>
+            <div class="coupon"></div>
+            <div class="coupon"></div>
+            <div class="coupon"></div>
         </div>
+
     </body>
 </html>
