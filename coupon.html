@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>corner demo</title>
+        <style media="screen">
+
+        .main {
+            position: relative;
+            width: 200px;
+            height: 40px;
+            margin: 0 5px;
+            background-color: #e9ac30;
+        }
+        .main::before {
+            position: absolute;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -5px;
+            width: 5px;
+            height: 40px;
+            border-radius: 2px 0 0 2px;
+            background: radial-gradient(10px at left,transparent 50%, #e9ac30 50%);
+        }
+        .main::after {
+            position: absolute;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -5px;
+            width: 5px;
+            height: 40px;
+            border-radius: 0 2px 2px 0;
+            background: radial-gradient(10px at right,transparent 50%, #e9ac30 50%);
+        }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+
+        </div>
+    </body>
+</html>
