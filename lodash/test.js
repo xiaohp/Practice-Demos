@@ -15,6 +15,14 @@ var test_chunk = function() {
 
 test_chunk()
 
+var test_copy = function() {
+    var a = [1, 2, 3]
+    ensure(copy(a), [1, 2, 3], 'copy test 1 error')
+    ensure(copy([]), [], 'copy test 2 error')
+}
+
+test_copy()
+
 var test_compact = function() {
     var numbers = [0, 1, false, 2, '', 3]
     ensure(compact(numbers), [1, 2, 3], 'compact test 1 error')

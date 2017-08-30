@@ -13,6 +13,10 @@ const chunk = function(array, size=1) {
         return res
     }
 }
+// 复制数组
+const copy = function(array) {
+    return [...array]
+}
 // 删除否定值 false, null, 0, "", undefined, NaN
 const compact = function(array) {
     var res = []
