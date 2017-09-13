@@ -16,6 +16,7 @@ const bubble_sort = function(array) {
     return array
 }
 
+
 // 选择排序
 const selection_sort = function(array) {
     let length = array.length
@@ -39,7 +40,7 @@ const insertion_sort = function(array) {
     let j
     for (let i = 0; i < length; i++) {
         let value = array[i]
-        for ( j = i - 1; j > -1 && array[j] > value; j--) {
+        for (j = i - 1; j > -1 && array[j] > value; j--) {
             array[j + 1] = array[j]
         }
         array[j + 1] = value
@@ -71,7 +72,7 @@ const merge_sort = function(array) {
     if (array.length < 2) {
         return array
     }
-    
+
     let middle = Math.floor(array.length / 2)
     let left = array.slice(0, middle)
     let right = array.slice(middle)
@@ -87,11 +88,11 @@ const partition = function(array, left, right) {
         while (array[i] < pivot) {
             i++
         }
-        
+
         while (array[j] > pivot) {
             j--
         }
-        
+
         if (i <= j) {
             swap(array, i, j)
             i++
@@ -107,7 +108,7 @@ const quick_sort = function(array, left, right) {
     }
     if (typeof left !== 'number') {
         left = 0
-    } 
+    }
     if (typeof right !== 'number') {
         right = array.length - 1
     }

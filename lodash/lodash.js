@@ -1,8 +1,8 @@
 // Array
 // 切分数组
-const chunk = function(array, size=1) {
+const chunk = function(array, size = 1) {
     let length = array.length
-    if (length === 0 || size < 1 ) {
+    if (length === 0 || size < 1) {
         return []
     } else {
         let res = []
@@ -40,7 +40,7 @@ const difference = function(a, b) {
     return res
 }
 // 返回从指定位置截取的数组
-const drop = function(array, n=1) {
+const drop = function(array, n = 1) {
     return array.slice(n)
 }
 // 拍平数组
@@ -98,7 +98,7 @@ const head = function(array) {
 //     return first
 // }
 // 返回元素在数组中第一次出现的位置，可以设置从指定位置开始查找
-const indexOf = function(array, value, from_index=0) {
+const indexOf = function(array, value, from_index = 0) {
     for (let i = from_index; i < array.length; i++) {
         let a = array[i]
         if (a === value) {
@@ -128,7 +128,7 @@ const intersection = function(a, b) {
     return res
 }
 // 将数组拼接成字符串
-const join = function(array, separator=',') {
+const join = function(array, separator = ',') {
     return array.join(separator)
 }
 // 获取数组最后一个元素
@@ -136,7 +136,7 @@ const last = function(array) {
     return array[array.length - 1]
 }
 // 获取数组的第 n 个元素，如果 n 是负数，则返回的是从末尾开始查找的元素
-const nth = function(array, n=0) {
+const nth = function(array, n = 0) {
     if (n >= 0) {
         return array[n]
     } else {
@@ -175,7 +175,7 @@ const pullAt = function(array, indexes) {
 // 翻转数组
 const reverse = function(array) {
     let res = []
-    for (var i = array.length - 1; i > -1 ; i--) {
+    for (var i = array.length - 1; i > -1; i--) {
         let a = array[i]
         res.push(a)
     }
@@ -190,7 +190,7 @@ const tail = function(array) {
     return res
 }
 // 返回数组的切片
-const take = function(array, n=1) {
+const take = function(array, n = 1) {
     let res = []
     let l
     if (array.length > n) {

@@ -1,4 +1,3 @@
-
 var data = [
     {
         'name': 'Alex',
@@ -16,9 +15,9 @@ var data = [
 
 for (var i = 0; i < data.length; i++) {
     let d = data[i]
-    if (d.state == 0) {
+    if (d.state === 0) {
         d["state_class"] = 'normal'
-    } else if (d.state == 1) {
+    } else if (d.state === 1) {
         d["state_class"] = 'block'
     }
     console.log(d)
@@ -27,5 +26,5 @@ for (var i = 0; i < data.length; i++) {
 
 console.log('debug-------------', data)
 
-var member_data = Tempo.prepare('member', { 'escape': false })
+var member_data = Tempo.prepare('member', {'escape': false})
 member_data.render(data)

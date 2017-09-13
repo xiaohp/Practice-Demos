@@ -20,11 +20,11 @@
                     <option value="4">手机尊享价</option>
             </select>
         </label>
-        
+
         <label for="id_label_single2">
             这里是从数组加载的列表
             <select class="basic-single js-states form-control" name="" id="id_label_single2">
-                
+
             </select>
         </label>
         <label >
@@ -36,29 +36,24 @@
                 <option value="4">手机尊享价</option>
             </select>
         </label>
-        
-        
+
+
         <script type="text/javascript">
             $(document).ready(function() {
                 window.log = console.log.bind(console, '*** xiao')
-                
                 $('.js-example-basic-single').select2({
                     placeholder: "选择名称",
                     allowClear: true
-                    
+
                 })
-                
                 var data = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
                 var data2 = [{ id: '活动名称', text: '活动名称' }, { id: 'bug', text: 'bug' }, { id: 'duplicate', text: 'duplicate' }, { id: 'invalid', text: 'invalid' }, { id: 'wontfix', text: 'wontfix' }];
 
                 $('.basic-single').select2({
                     'data': data2,
                 })
-
-                
             })
             
-          
         </script>
     </body>
 </html>
