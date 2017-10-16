@@ -1,11 +1,17 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>ajax todo</title>
+        <title>express demo</title>
     </head>
     <body>
         <h1>Hello doge</h1>
         <img src=/images/doge.gif>
+        <form action="/todo/add" method="POST">
+            <br>
+            <input type="text" name="task">
+            <br>
+            <button type="submit">form 提交表单</button>
+        </form>
     </body>
     <script>
         var ajax = function(method, path, data, reseponseCallback) {
@@ -29,8 +35,21 @@
             ajax(method, path, data, callback)
         }
 
+        var apiTodoAdd = function (name, callback) {
+	        var method = 'POST'
+	        var path = '/todo/add'
+	        var data = {
+	        	'task': name,
+            }
+	        ajax(method, path, data, callback)
+        }
+
         apiTodoAll(function (response) {
             console.log('api todo all', response)
+        })
+
+        apiTodoAdd('早起', function(response) {
+	        console.log('api todo add', response)
         })
     </script>
 </html>
