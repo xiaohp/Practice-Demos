@@ -1,9 +1,9 @@
-var express = require('express')
-var cors = require('cors')
-var bodyParse = require('body-parser')
-var fs = require('fs')
+const express = require('express')
+const cors = require('cors')
+const bodyParse = require('body-parser')
+const fs = require('fs')
 
-var app = express()
+const app = express()
 app.use(cors())
 app.use(express.static('static'))
 app.use(bodyParse.json())
@@ -11,16 +11,16 @@ app.use(bodyParse.urlencoded({
 	extended: true,
 }))
 
-var todoList = [
+const todoList = [
     {
         id: 1,
         task: "吃饭",
     }
 ]
 
-app.get('/', function(request, response) {
-    var path = 'index.html'
-    var options = {
+app.get('/', (request, response) => {
+    const path = 'index.html'
+	const options = {
         encoding: 'utf-8'
     }
     fs.readFile(path, options, function(err, data){
@@ -28,40 +28,49 @@ app.get('/', function(request, response) {
     })
 })
 
-var todoAdd = function(todo) {
+const todoAdd = (todo) => {
 	// 判断是否有数据
 	if(todoList.length === 0) {
 		todo.id = 1
 	} else {
-		todo.id = todoList[todoList.length-1].id + 1
+		todo.id = todoList[todoList.length - 1].id + 1
 	}
 	todoList.push(todo)
 	return todo
 }
 
-var sendJSON = function (response, object) {
-    var data = JSON.stringify(object)
+const sendJSON = (response, object) => {
+	const data = JSON.stringify(object)
     response.type('json')
     response.send(data)
 }
 
-app.get('/todo/all', function(request, response) {
+app.get('/todo/all', (request, response) => {
 	// console.log('request is', request.body)
-    var data = {
+	const data = {
         list: todoList,
     }
     sendJSON(response, data)
 })
 
-app.post('/todo/add', function(request, response) {
+app.post('/todo/add', (request, response) => {
 	console.log('request is', request.body)
-	var todo = request.body
-	var t = todoAdd(todo)
+	const todo = request.body
+	const t = todoAdd(todo)
 	sendJSON(response, t)
 })
 
+const run = (port=8080, host='') => {
+	const server = app.listen(port, host, () => {
+		const address = server.address()
+		host = address.address
+		port = address.port
+		console.log(`已启动服务器，访问地址为 http://${host}:${port}`)
+	})
+}
 
-var server = app.listen(8086, function () {
-	var port = server.address().port
-	console.log(`已启动服务器，访问地址为 http://192.168.1.139:${port}`)
-})
+if (require.main === module) {
+	const port = 8086
+	const host = '127.0.0.1'
+	run(port, host)
+}
