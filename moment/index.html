@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>moment demo</title>
-    </head>
-    <body>
-        <span>剩余时间</span>
-        <span id="id-span-time"></span>
 
-        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
-        <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.min.js" charset="utf-8"></script>
-        <script type="text/javascript">
-            var update_left_time = function(left_time) {
-                var end_time = moment(left_time)
-                var now_time = moment(Date.now())
+<head>
+    <meta charset="utf-8">
+    <title>moment demo</title>
+</head>
 
-                var days = end_time.diff(now_time, 'days')
-                var hours = end_time.diff(now_time, 'hours') % 24
-                var minutes = end_time.diff(now_time, 'minutes') % 60
-                var seconds = end_time.diff(now_time, 'seconds') % 60
+<body>
+    <span>剩余时间</span>
+    <span id="id-span-time"></span>
 
-                var left_time = `${days}天${hours}小时${minutes}分${seconds}秒`
-                $('#id-span-time').text(left_time)
-            }
-            update_left_time('2017-08-12 12:01:09')
-        </script>
-    </body>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var update_left_time = function(left_time) {
+            var end_time = moment(left_time)
+            var now_time = moment(Date.now())
+
+            var days = end_time.diff(now_time, 'days')
+            var hours = end_time.diff(now_time, 'hours') % 24
+            var minutes = end_time.diff(now_time, 'minutes') % 60
+            var seconds = end_time.diff(now_time, 'seconds') % 60
+
+            var left_time = `${days}天${hours}小时${minutes}分${seconds}秒`
+            $('#id-span-time').text(left_time)
+        }
+        update_left_time('2017-08-12 12:01:09')
+    </script>
+</body>
+
 </html>

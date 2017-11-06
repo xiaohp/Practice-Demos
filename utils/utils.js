@@ -34,7 +34,7 @@ var bindEvent = function(element, eventName, callback) {
 
 var bindAll = function(selector, eventName, callback) {
     var elements = document.querySelectorAll(selector)
-    for(var i = 0; i < elements.length; i++) {
+    for (var i = 0; i < elements.length; i++) {
         var e = elements[i]
         bindEvent(e, eventName, callback)
     }
@@ -98,7 +98,7 @@ var ajax = function(method, path, data, reseponseCallback) {
     r.open(method, path, true)
     r.setRequestHeader('Content-Type', 'application/json')
     r.onreadystatechange = function() {
-        if(r.readyState === 4) {
+        if (r.readyState === 4) {
             reseponseCallback(r)
         }
     }
