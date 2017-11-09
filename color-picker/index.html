@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>color picker</title>
+    <style media="screen">
+        canvas {
+            float: left;
+        }
+        div {
+            width: 200px;
+            height: 50px;
+            float: left
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <div id="color"></div>
+
+    <script type="text/javascript">
+        var img = new Image()
+        img.src = './dog.jpg'
+        var canvas = document.querySelector('#canvas')
+        var ctx = canvas.getContext('2d')
+        img.onload = function() {
+            if (img.width > 200) {
+                canvas.width = img.width
+            }
+            if (img.height > 200) {
+                canvas.height = img.height
+            }
+            ctx.drawImage(img, 0, 0)
+        }
+        var color = document.querySelector('#color')
+
+        canvas.addEventListener('mousemove', function(event) {
+            var x = event.layerX
+            var y = event.layerY
+            var pixel = ctx.getImageData(x, y, 1, 1)
+            var data = pixel.data
+            var rgba = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${data[3] / 255})`
+            color.style.background = rgba
+            color.textContent = rgba
+        })
+    </script>
+</body>
+
+</html>
