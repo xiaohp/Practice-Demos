@@ -11,7 +11,7 @@ const renderTable = function() {
     for (var i = 0; i < 8; i++) {
         tr += template
     }
-    $('tbody').append(tr)
+    $('tbody').html(tr)
 }
 
 const bindSelect = function() {
