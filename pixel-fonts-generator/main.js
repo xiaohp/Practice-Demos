@@ -23,7 +23,13 @@ const bindSelect = function() {
 
 const updateBinary = function() {
     var data = fontData()
-    $('.fonts-data').text(data)
+    var content = ''
+    data.forEach(function(e) {
+        var text = e.join('')
+        content += `<span>0b${text}</span><br>`
+    })
+
+    $('.fonts-data').html(content)
 }
 
 const fontData = function() {
@@ -59,6 +65,7 @@ const processArray = function(arr) {
 const __main = function() {
     renderTable()
     bindSelect()
+    updateBinary()
 }
 
 __main()

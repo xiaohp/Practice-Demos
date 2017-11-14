@@ -4,8 +4,13 @@ table.table {
 
 #id-tbody > tr > td {
     height: 50px;
+    cursor: pointer;
 }
 
 td.select {
     background-color: black;
+}
+
+.control {
+    display: inline-block;
 }
