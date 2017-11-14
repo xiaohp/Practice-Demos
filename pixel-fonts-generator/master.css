@@ -1,0 +1,11 @@
+table.table {
+    width: 200px;
+}
+
+#id-tbody > tr > td {
+    height: 50px;
+}
+
+td.select {
+    background-color: black;
+}
