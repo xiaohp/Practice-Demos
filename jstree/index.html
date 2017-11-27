@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jsTree test</title>
+    <!-- 1 load the theme CSS file -->
+    <link rel="stylesheet" href="dist/themes/default/style.min.css" />
+</head>
+
+<body>
+    <!-- 2 setup a container element -->
+    <div id="container">
+
+    </div>
+
+    <!-- 3 include the jQuery library -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 4 include the minified jstree source -->
+    <script src="dist/jstree.min.js"></script>
+<script>
+var data = [{
+    "text": "Root node",
+    "id": "01",
+    "children": [{
+            "text": "Child node 1",
+            "id": "02",
+            "children": [{
+                    "text": "Child node 3",
+                    "id": "03",
+                },
+                {
+                    "text": "Child node 4",
+                    "id": "04",
+                }
+            ]
+        },
+        {
+            "text": "Child node 2",
+            "id": "05",
+        }
+    ]
+}, ]
+$(function() {
+    // 配置不显示中间状态，选择文件后不影响上级文件夹
+    $.jstree.defaults.checkbox.three_state = false
+    // 5 create an instance when the DOM is ready
+    $('#container').jstree({
+        'core': {
+            'data': data,
+        },
+        "plugins": ["checkbox"]
+    })
+    // 6 bind to events triggered on the tree
+    $('#container').on("changed.jstree", function(e, data) {
+        console.log(data.selected)
+        var res = data.selected.map(id => {
+            var text = data.instance.get_node(id).text
+            return {id, text}
+        })
+        console.log('选择的 id 和 text', res)
+    })
+})
+</script>
+</body>
+
+</html>
