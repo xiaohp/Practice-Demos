@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>center</title>
+        <style media="screen">
+            .container {
+                width: 400px;
+                height: 200px;
+                background-color: #ccc;
+                margin: 20px;
+            }
+            .flex-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .absolute-box {
+                position: relative;
+            }
+            .absolute-box .content {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .horizontal {
+                width: 200px;
+                margin: 0 auto;
+                background-color: lightblue;
+            }
+
+            .inline-content {
+                /* 适用于 inline 和 inline-block 元素 */
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container flex-box">
+            <div class="content">
+                flex 水平垂直居中
+            </div>
+        </div>
+        <div class="container absolute-box">
+            <div class="content">
+                absolute 水平垂直居中
+            </div>
+        </div>
+        <div class="container">
+            <div class="horizontal">
+                block 水平居中
+            </div>
+        </div>
+        <div class="container inline-content">
+            <span>inline-block 水平居中</span>
+        </div>
+    </body>
+</html>
