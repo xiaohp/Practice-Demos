@@ -67,7 +67,7 @@ class HashTable {
 		if (data[index] === undefined) {
 			data[index] = []
 		}
-		var kvs = data[index]
+		let kvs = data[index]
 		for (var i = 0; i < kvs.length; i++) {
 			let kv = kvs[i]
 			if (key === kv[0]) {

@@ -1,41 +1,41 @@
-var e = function(sel) {
+const e = function(sel) {
     return document.querySelector(sel)
 }
 
-var es = function(sel) {
+const es = function(sel) {
     return document.querySelectorAll(sel)
 }
 
 // 在元素中查找
-var find = function(element, selector) {
+const find = function(element, selector) {
     return element.querySelector(selector)
 }
 
 // 获取子元素在父元素中的 index
-var indexOf = function(element, childElement) {
-    var nodes = element.children
-    var i = Array.prototype.indexOf.call(nodes, childElement)
+const indexOf = function(element, childElement) {
+    let nodes = element.children
+    let i = Array.prototype.indexOf.call(nodes, childElement)
     return i
 }
 
-var log = console.log.bind(console, '**debug** ')
+const log = console.log.bind(console, '**debug** ')
 
-var appendHtml = function(element, html) {
+const appendHtml = function(element, html) {
     element.insertAdjacentHTML('beforeend', html)
 }
 
-var prependHtml = function(element, html) {
+const prependHtml = function(element, html) {
     element.insertAdjacentHTML('afterbegin', html)
 }
 
-var bindEvent = function(element, eventName, callback) {
+const bindEvent = function(element, eventName, callback) {
     element.addEventListener(eventName, callback)
 }
 
-var bindAll = function(selector, eventName, callback) {
-    var elements = document.querySelectorAll(selector)
-    for (var i = 0; i < elements.length; i++) {
-        var e = elements[i]
+const bindAll = function(selector, eventName, callback) {
+    let elements = document.querySelectorAll(selector)
+    for (let i = 0; i < elements.length; i++) {
+        let e = elements[i]
         bindEvent(e, eventName, callback)
     }
 }
@@ -57,18 +57,18 @@ var toggleClass = function(element, className) {
 }
 // 找到所有拥有该 class 的元素，并删除该 class
 var removeClassAll = function(className) {
-    var selector = '.' + className
-    var elements = document.querySelectorAll(selector)
-    for (var i = 0; i < elements.length; i++) {
-        var e = elements[i]
+    let selector = '.' + className
+    let elements = document.querySelectorAll(selector)
+    for (let i = 0; i < elements.length; i++) {
+    	let e = elements[i]
         e.classList.remove(className)
     }
 }
 // 删除元素
 var removeAll = function(selector) {
-    var tags = document.querySelectorAll(selector)
-    for (var i = 0; i < tags.length; i++) {
-        var tag = tags[i]
+    let tags = document.querySelectorAll(selector)
+    for (let i = 0; i < tags.length; i++) {
+        let tag = tags[i]
         tag.remove()
     }
 }
@@ -94,13 +94,14 @@ var setData = function(element, property, value) {
 }
 
 var ajax = function(method, path, data, reseponseCallback) {
-    var r = new XMLHttpRequest()
+    let r = new XMLHttpRequest()
     r.open(method, path, true)
     r.setRequestHeader('Content-Type', 'application/json')
     r.onreadystatechange = function() {
         if (r.readyState === 4) {
-            reseponseCallback(r)
+			let res = JSON.parse(r.response)
+            reseponseCallback(res)
         }
     }
-    r.send(data)
+    r.send(JSON.stringify(data))
 }
