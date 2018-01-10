@@ -18,7 +18,7 @@ var indexOf = function(element, childElement) {
     return i
 }
 
-var log = console.log.bind(console)
+var log = console.log.bind(console, '**debug** ')
 
 var appendHtml = function(element, html) {
     element.insertAdjacentHTML('beforeend', html)
