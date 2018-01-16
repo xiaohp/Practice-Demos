@@ -24,7 +24,7 @@ const selection_sort = function(array) {
         let min = i
         for (let j = i + 1; j < length; j++) {
             if (array[j] < array[min]) {
-                min < j
+                min = j
             }
         }
         if (i !== min) {
