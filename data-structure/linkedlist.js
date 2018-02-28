@@ -23,6 +23,7 @@ class LinkedList {
 		this._length++
 	}
 	// 链接开头插入元素
+	// 插入在 head 节点后
 	prepend(el) {
 		let n = this.head
 		let node = new Node(el)
