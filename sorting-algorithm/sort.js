@@ -6,8 +6,8 @@ const swap = function(array, p1, p2) {
 // 冒泡排序
 const bubble_sort = function(array) {
     let length = array.length
-    for (let i = 0; i < length; i++) {
-        for (let j = 0; j < length - i - 1; j++) {
+    for (let i = 0; i < length - 1; i++) {
+        for (let j = 0; j < length - 1 - i; j++) {
             if (array[j] > array[j + 1]) {
                 swap(array, j, j + 1)
             }
